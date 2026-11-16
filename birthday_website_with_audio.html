@@ -1,0 +1,937 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy Birthday Bestie 💗</title>
+
+    <link
+      href="https\://fonts.googleapis.com/css2?family=Playfair+Display:wght\@500;70&#x30;*&*&#x66;amily=Dancing+Script:wght\@600;70&#x30;*&*&#x66;amily=Poppins:wght\@400;500;600;70&#x30;*&*&#x64;isplay=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+
+        overflow-x: hidden;
+
+        background: #fff0f5;
+
+        color: #984b70;
+      }
+
+      .page {
+        min-height: 100vh;
+
+        width: 100%;
+
+        display: none;
+
+        position: relative;
+
+        overflow: hidden;
+      }
+
+      .page.active {
+        display: flex;
+
+        animation: pageIn 1s ease;
+      }
+
+      @keyframes pageIn {
+        from {
+          opacity: 0;
+
+          transform: translateY(25px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: translateY(0);
+        }
+      }
+
+      /* BACKGROUND */
+
+      #page1 {
+        align-items: center;
+
+        justify-content: center;
+
+        flex-direction: column;
+
+        text-align: center;
+
+        background:
+          radial-gradient(circle at 20% 20%, #fff 0%, transparent 30%),
+          radial-gradient(circle at 80% 80%, #f7c8dc, transparent 35%),
+          linear-gradient(135deg, #ffe5ef, #f8d9eb, #fcecf4);
+      }
+
+      #page2 {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        padding: 60px 18px;
+
+        background:
+          radial-gradient(circle at top, #fff 0%, transparent 35%),
+          linear-gradient(135deg, #ffe4ee, #fbd3e4, #fff0f5);
+      }
+
+      /* TEXT */
+
+      .top-tag {
+        font-size: 12px;
+
+        letter-spacing: 5px;
+
+        text-transform: uppercase;
+
+        color: #bd7295;
+
+        margin-bottom: 15px;
+      }
+
+      .main-title {
+        font-family: "Dancing Script", cursive;
+
+        font-size: clamp(45px, 8vw, 78px);
+
+        color: #d84e8a;
+
+        text-shadow: 2px 4px 15px #eaa4c5;
+
+        animation: titleFloat 3s infinite ease-in-out;
+      }
+
+      @keyframes titleFloat {
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .subtitle {
+        font-family: "Playfair Display", serif;
+
+        margin-top: 15px;
+
+        font-size: 19px;
+
+        color: #9d5b7b;
+      }
+
+      /* GIFT */
+
+      .gift-area {
+        width: 270px;
+
+        height: 270px;
+
+        margin: 55px auto 35px;
+
+        position: relative;
+
+        perspective: 1000px;
+      }
+
+      .gift {
+        position: absolute;
+
+        width: 220px;
+
+        height: 180px;
+
+        bottom: 0;
+
+        left: 25px;
+
+        animation: giftBounce 2.5s infinite ease-in-out;
+      }
+
+      @keyframes giftBounce {
+        50% {
+          transform: translateY(-12px) rotate(1deg);
+        }
+      }
+
+      .box {
+        position: absolute;
+
+        bottom: 0;
+
+        width: 220px;
+
+        height: 140px;
+
+        border-radius: 5px 5px 15px 15px;
+
+        background: linear-gradient(120deg, #df75a2, #ffb6d0, #e77da8);
+
+        box-shadow: 0 20px 35px #c35e8c45;
+      }
+
+      .box::before {
+        content: "";
+
+        position: absolute;
+
+        width: 35px;
+
+        height: 100%;
+
+        left: 92px;
+
+        background: linear-gradient(90deg, #fff0f5, #ffd3e4, #fff0f5);
+      }
+
+      .lid {
+        position: absolute;
+
+        width: 240px;
+
+        height: 48px;
+
+        left: -10px;
+
+        top: 0;
+
+        border-radius: 8px;
+
+        background: linear-gradient(120deg, #e77da8, #ffc8dc, #dc70a0);
+
+        z-index: 5;
+
+        transform-origin: left bottom;
+
+        transition: 1.5s ease;
+      }
+
+      .bow {
+        position: absolute;
+
+        top: -42px;
+
+        left: 80px;
+
+        width: 65px;
+
+        height: 50px;
+
+        z-index: 8;
+
+        transition: 1s ease;
+      }
+
+      .bow::before,
+      .bow::after {
+        content: "";
+
+        position: absolute;
+
+        width: 40px;
+
+        height: 32px;
+
+        border: 11px solid #fff0f5;
+
+        border-radius: 50% 50% 10% 50%;
+      }
+
+      .bow::after {
+        left: 25px;
+
+        transform: scaleX(-1);
+      }
+
+      .knot {
+        position: absolute;
+
+        top: 13px;
+
+        left: 24px;
+
+        width: 20px;
+
+        height: 22px;
+
+        background: #fff0f5;
+
+        border-radius: 50%;
+
+        z-index: 9;
+      }
+
+      .ribbon {
+        position: absolute;
+
+        z-index: 6;
+
+        width: 36px;
+
+        height: 180px;
+
+        left: 92px;
+
+        bottom: 0;
+
+        background: linear-gradient(90deg, #fff0f5, #ffd6e5, #fff0f5);
+
+        transition: 1s;
+      }
+
+      .opening .lid {
+        transform: translate(-25px, -130px) rotate(-35deg);
+      }
+
+      .opening .bow {
+        transform: translate(120px, -100px) rotate(45deg);
+
+        opacity: 0;
+      }
+
+      .opening .ribbon {
+        transform: translateY(200px) rotate(30deg);
+
+        opacity: 0;
+      }
+
+      /* BUTTON */
+
+      .open-btn {
+        padding: 16px 38px;
+
+        border: 2px solid white;
+
+        border-radius: 50px;
+
+        background: linear-gradient(120deg, #e65b96, #bd73b1);
+
+        color: white;
+
+        font-size: 17px;
+
+        font-weight: 600;
+
+        cursor: pointer;
+
+        box-shadow: 0 10px 30px #d875a65c;
+
+        transition: 0.3s;
+      }
+
+      .open-btn:hover {
+        transform: scale(1.08);
+
+        box-shadow: 0 15px 35px #d875a688;
+      }
+
+      /* DECORATIONS */
+
+      .float {
+        position: fixed;
+
+        bottom: -50px;
+
+        pointer-events: none;
+
+        animation: floatUp linear forwards;
+
+        z-index: 2;
+      }
+
+      @keyframes floatUp {
+        to {
+          transform: translateY(-110vh) rotate(360deg);
+
+          opacity: 0;
+        }
+      }
+
+      .star {
+        position: absolute;
+
+        color: white;
+
+        font-size: 25px;
+
+        animation: sparkle 2s infinite alternate;
+      }
+
+      @keyframes sparkle {
+        to {
+          opacity: 0.2;
+
+          transform: scale(0.5);
+        }
+      }
+
+      /* PAGE TWO */
+
+      .agreement-heading {
+        font-family: "Dancing Script", cursive;
+
+        font-size: clamp(40px, 7vw, 65px);
+
+        color: #d34f88;
+
+        margin-bottom: 10px;
+      }
+
+      .agreement-subtitle {
+        font-family: "Playfair Display", serif;
+
+        margin-bottom: 30px;
+
+        color: #9c6480;
+      }
+
+      .agreement-frame {
+        max-width: 620px;
+
+        width: 100%;
+
+        padding: 12px;
+
+        background: linear-gradient(135deg, #fff, #ffd5e5, #fff);
+
+        border-radius: 15px;
+
+        box-shadow: 0 20px 55px #bd628b50;
+
+        animation: revealImage 1.5s ease both;
+
+        cursor: zoom-in;
+      }
+
+      .agreement-frame img {
+        display: block;
+
+        width: 100%;
+
+        height: auto;
+
+        border-radius: 8px;
+      }
+
+      @keyframes revealImage {
+        from {
+          opacity: 0;
+
+          transform: scale(0.7) translateY(50px);
+        }
+
+        to {
+          opacity: 1;
+
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .birthday-message {
+        max-width: 720px;
+
+        margin: 40px auto;
+
+        line-height: 1.9;
+
+        font-size: 16px;
+
+        color: #8e5374;
+      }
+
+      .birthday-message h2 {
+        font-family: "Dancing Script", cursive;
+
+        font-size: clamp(38px, 6vw, 55px);
+
+        color: #dc518c;
+
+        margin-bottom: 15px;
+      }
+
+      .forever {
+        font-size: 35px;
+
+        color: #db6199;
+
+        margin-top: 10px;
+      }
+
+      .back-btn {
+        margin-top: 20px;
+
+        padding: 13px 30px;
+
+        border-radius: 40px;
+
+        background: #d85e96;
+
+        color: white;
+
+        border: none;
+
+        cursor: pointer;
+
+        font-size: 15px;
+
+        transition: 0.3s;
+      }
+
+      .back-btn:hover {
+        transform: translateY(-5px);
+
+        background: #b84b83;
+      }
+
+      /* IMAGE FULL VIEW */
+
+      #lightbox {
+        display: none;
+
+        position: fixed;
+
+        inset: 0;
+
+        z-index: 20;
+
+        background: #301525ed;
+
+        align-items: center;
+
+        justify-content: center;
+
+        padding: 15px;
+      }
+
+      #lightbox.show {
+        display: flex;
+      }
+
+      #lightbox img {
+        max-width: 95%;
+
+        max-height: 95%;
+
+        object-fit: contain;
+      }
+
+      /* MUSIC */
+
+      .music-btn {
+        position: fixed;
+
+        top: 20px;
+
+        right: 20px;
+
+        z-index: 10;
+
+        background: white;
+
+        border: none;
+
+        border-radius: 50px;
+
+        padding: 12px 17px;
+
+        color: #d34f88;
+
+        cursor: pointer;
+
+        box-shadow: 0 5px 20px #b65c8b33;
+      }
+
+      /* PERSONAL MUSIC PLAYER */
+      .music-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        width: min(390px, 90vw);
+        margin: 22px auto 0;
+        padding: 14px 18px;
+        border: 1px solid #ffffff;
+        border-radius: 18px;
+        background: #ffffffa8;
+        box-shadow: 0 8px 25px #d875a625;
+        backdrop-filter: blur(8px);
+      }
+      .music-copy {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        text-align: left;
+      }
+      .music-copy strong {
+        color: #c34d83;
+        font-size: 13px;
+      }
+      .music-copy small {
+        color: #a66b87;
+        font-size: 10px;
+      }
+      .music-lines {
+        height: 30px;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+      }
+      .music-lines span {
+        width: 3px;
+        height: 7px;
+        border-radius: 5px;
+        background: #e779aa;
+        transform: scaleY(0.55);
+      }
+      .music-lines.playing span {
+        animation: musicWave 0.75s ease-in-out infinite alternate;
+      }
+      .music-lines span:nth-child(2),
+      .music-lines span:nth-child(6) {
+        animation-delay: 0.15s;
+      }
+      .music-lines span:nth-child(3),
+      .music-lines span:nth-child(5) {
+        animation-delay: 0.3s;
+      }
+      .music-lines span:nth-child(4) {
+        animation-delay: 0.45s;
+      }
+      @keyframes musicWave {
+        from {
+          transform: scaleY(0.45);
+        }
+        to {
+          transform: scaleY(2.8);
+        }
+      }
+      .song-note {
+        margin: -16px 0 24px;
+        color: #c16b91;
+        font-size: 13px;
+        font-style: italic;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .music-lines.playing span {
+          animation: none;
+          transform: scaleY(1.5);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .gift-area {
+          transform: scale(0.85);
+
+          margin: 30px auto;
+        }
+
+        #page2 {
+          padding: 75px 12px 35px;
+        }
+
+        .birthday-message {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Replace my-audio.mp3 with your audio file name. Keep the audio file in this same folder. -->
+    <audio id="myAudio" src="my-audio.mp3" preload="auto" loop></audio>
+
+    <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+      ♫ Play Music
+    </button>
+
+    <!-- PAGE 1: GIFT -->
+
+    <section class="page active" id="page1">
+      <span class="star" style="top: 15%; left: 15%">✦</span>
+
+      <span class="star" style="top: 25%; right: 15%">✧</span>
+
+      <span class="star" style="bottom: 20%; left: 20%">✦</span>
+
+      <span class="star" style="bottom: 25%; right: 20%">✧</span>
+
+      <div class="top-tag">A little surprise made with love</div>
+
+      <h1 class="main-title">Hey Bestie! ❤️</h1>
+
+      <p class="subtitle">I have a little surprise for you...</p>
+
+      <div class="music-card" aria-live="polite">
+        <div class="music-lines" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span
+          ><span></span><span></span>
+        </div>
+        <div class="music-copy">
+          <strong>♫ A Little Song, Just for You ♡</strong>
+          <small id="musicMessage"
+            >Your special song is waiting to play...</small
+          >
+        </div>
+        <div class="music-lines music-lines-right" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span
+          ><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="gift-area" id="giftArea">
+        <div class="gift">
+          <div class="box"></div>
+
+          <div class="ribbon"></div>
+
+          <div class="lid"></div>
+
+          <div class="bow">
+            <div class="knot"></div>
+          </div>
+        </div>
+      </div>
+
+      <button class="open-btn" onclick="openGift()">Open Your Gift 🎀</button>
+
+      <p style="margin-top: 25px; font-size: 13px; color: #bd799b">
+        Made with endless love for my favourite person ♡
+      </p>
+    </section>
+
+    <!-- PAGE 2: AGREEMENT -->
+
+    <section class="page" id="page2">
+      <div class="top-tag">A forever kind of friendship</div>
+
+      <h1 class="agreement-heading">A Special Surprise! ❤️</h1>
+
+      <p class="agreement-subtitle">
+        One little agreement, a lifetime of memories...
+      </p>
+
+      <div class="agreement-frame" onclick="showFullImage()">
+        <img
+          src="agreement.png"
+          id="agreement"
+          alt="Our Original Friendship Agreement"
+        />
+      </div>
+
+      <div class="birthday-message">
+        <h2>Happy Birthday.. ❤️</h2>
+
+        <p>
+          Some friendships are not just made, they are meant to last forever.
+          This little agreement is a reminder that you're stuck with me for a
+          lifetime! No cancellation, no expiry, only unlimited friendship. ♾️
+        </p>
+
+        <div class="forever">Forever & Always ♡</div>
+
+        <p
+          style="
+            margin-top: 15px;
+
+            font-family: &quot;Dancing Script&quot;;
+
+            font-size: 25px;
+          "
+        >
+          You are my favourite forever person! 🌷
+        </p>
+      </div>
+
+      <button class="back-btn" onclick="goBack()">↶ Back to My Gift 🎁</button>
+    </section>
+
+    <!-- FULL IMAGE VIEW -->
+
+    <div id="lightbox" onclick="closeFullImage()">
+      <img src="agreement.png" alt="Friendship Agreement" />
+    </div>
+
+    <script>
+      // PAGE TRANSITIONS
+
+      function openGift() {
+        const gift = document.getElementById("giftArea");
+
+        gift.classList.add("opening");
+
+        createConfetti();
+
+        setTimeout(() => {
+          document.getElementById("page1").classList.remove("active");
+
+          document.getElementById("page2").classList.add("active");
+
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 1700);
+      }
+
+      function goBack() {
+        document.getElementById("page2").classList.remove("active");
+
+        document.getElementById("page1").classList.add("active");
+
+        document.getElementById("giftArea").classList.remove("opening");
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // CONFETTI
+
+      function createConfetti() {
+        const colors = ["#ff6fa5", "#ffd1e2", "#d9a5d5", "#fff", "#f5c7db"];
+
+        for (let i = 0; i < 100; i++) {
+          const piece = document.createElement("div");
+
+          piece.style.position = "fixed";
+
+          piece.style.left = Math.random() * 100 + "vw";
+
+          piece.style.top = "-20px";
+
+          piece.style.width = "9px";
+
+          piece.style.height = "13px";
+
+          piece.style.background =
+            colors[Math.floor(Math.random() * colors.length)];
+
+          piece.style.zIndex = "15";
+
+          piece.style.pointerEvents = "none";
+
+          piece.style.animation = `fall ${2 + Math.random() * 3}s linear forwards`;
+
+          document.body.appendChild(piece);
+
+          setTimeout(() => piece.remove(), 5000);
+        }
+      }
+
+      // FLOATING HEARTS AND FLOWERS
+
+      function floatingDecorations() {
+        const items = ["♡", "♥", "✿", "🌸", "✧", "❤️"];
+
+        const el = document.createElement("div");
+
+        el.className = "float";
+
+        el.innerHTML = items[Math.floor(Math.random() * items.length)];
+
+        el.style.left = Math.random() * 100 + "vw";
+
+        el.style.fontSize = 15 + Math.random() * 20 + "px";
+
+        el.style.color = "#e779aa";
+
+        el.style.animationDuration = 6 + Math.random() * 6 + "s";
+
+        document.body.appendChild(el);
+
+        setTimeout(() => el.remove(), 13000);
+      }
+
+      setInterval(floatingDecorations, 600);
+
+      // IMAGE FULL VIEW
+
+      function showFullImage() {
+        document.getElementById("lightbox").classList.add("show");
+      }
+
+      function closeFullImage() {
+        document.getElementById("lightbox").classList.remove("show");
+      }
+
+      // CONFETTI ANIMATION
+
+      const style = document.createElement("style");
+
+      style.innerHTML = `
+
+@keyframes fall {
+
+  to {
+
+    transform:translateY(110vh) rotate(720deg);
+
+    opacity:0;
+
+  }
+
+}`;
+
+      document.head.appendChild(style);
+
+      // PERSONAL AUDIO PLAYER
+      const myAudio = document.getElementById("myAudio");
+      const musicBtn = document.getElementById("musicBtn");
+      const musicMessage = document.getElementById("musicMessage");
+      const musicLines = document.querySelectorAll(".music-lines");
+
+      function setMusicState(isPlaying) {
+        musicBtn.innerText = isPlaying ? "♫ Music On" : "♫ Play Music";
+        musicMessage.innerText = isPlaying
+          ? "Playing your special song... ♡"
+          : "Your special song is waiting to play...";
+        musicLines.forEach((line) =>
+          line.classList.toggle("playing", isPlaying),
+        );
+      }
+
+      async function toggleMusic() {
+        if (myAudio.paused) {
+          try {
+            await myAudio.play();
+          } catch (error) {
+            musicMessage.innerText =
+              "Add my-audio.mp3 to this folder, then tap play ♡";
+            console.warn("Audio could not be played:", error);
+          }
+        } else {
+          myAudio.pause();
+        }
+      }
+
+      myAudio.addEventListener("play", () => setMusicState(true));
+      myAudio.addEventListener("pause", () => setMusicState(false));
+      myAudio.addEventListener("ended", () => setMusicState(false));
+      myAudio.addEventListener("error", () => {
+        setMusicState(false);
+        musicMessage.innerText = "Place your audio file here as my-audio.mp3 ♡";
+      });
+
+      // Try autoplay when the page opens. Browsers may block autoplay until the
+      // visitor taps the page; the music button remains available as a fallback.
+      window.addEventListener("load", () => {
+        myAudio.play().catch(() => {
+          musicMessage.innerText =
+            "Tap ♫ Play Music to hear your special song ♡";
+        });
+      });
+    </script>
+  </body>
+</html>
